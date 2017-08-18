@@ -18,7 +18,7 @@ export declare const PENDING = "PENDING";
  * calculations of validity or value.
  */
 export declare const DISABLED = "DISABLED";
-export declare type FormHooks = 'change' | 'blur';
+export declare type FormHooks = 'change' | 'blur' | 'submit';
 export interface AbstractControlOptions {
     validators?: ValidatorFn | ValidatorFn[] | null;
     asyncValidators?: AsyncValidatorFn | AsyncValidatorFn[] | null;
@@ -145,6 +145,12 @@ export declare abstract class AbstractControl {
      * is re-calculated.
      */
     readonly statusChanges: Observable<any>;
+    /**
+     * Returns the update strategy of the `AbstractControl` (i.e.
+     * the event on which the control will update itself).
+     * Possible values: `'change'` (default) | `'blur'` | `'submit'`
+     */
+    readonly updateOn: FormHooks;
     /**
      * Sets the synchronous validators that are active on this control.  Calling
      * this will overwrite any existing sync validators.
@@ -296,7 +302,7 @@ export declare abstract class AbstractControl {
      */
     get(path: Array<string | number> | string): AbstractControl | null;
     /**
-     * Returns true if the control with the given path has the error specified. Otherwise
+     * Returns error data if the control with the given path has the error specified. Otherwise
      * returns null or undefined.
      *
      * If no path is given, it checks for the error on the present control.
@@ -372,6 +378,9 @@ export declare abstract class AbstractControl {
  * ```ts
  * const c = new FormControl('', { updateOn: 'blur' });
  * ```
+ *
+ * You can also set `updateOn` to `'submit'`, which will delay value and validity
+ * updates until the parent form of the control fires a submit event.
  *
  * See its superclass, {@link AbstractControl}, for more properties and methods.
  *
@@ -458,7 +467,6 @@ export declare class FormControl extends AbstractControl {
      */
     registerOnDisabledChange(fn: (isDisabled: boolean) => void): void;
     private _applyFormState(formState);
-    private _setUpdateStrategy(opts?);
 }
 /**
  * @whatItDoes Tracks the value and validity state of a group of {@link FormControl}
@@ -516,6 +524,17 @@ export declare class FormControl extends AbstractControl {
  *   password: new FormControl('')
  *   passwordConfirm: new FormControl('')
  * }, {validators: passwordMatchValidator, asyncValidators: otherValidator});
+ * ```
+ *
+ * The options object can also be used to set a default value for each child
+ * control's `updateOn` property. If you set `updateOn` to `'blur'` at the
+ * group level, all child controls will default to 'blur', unless the child
+ * has explicitly specified a different `updateOn` value.
+ *
+ * ```ts
+ * const c = new FormGroup({
+ *    one: new FormControl()
+ * }, {updateOn: 'blur'});
  * ```
  *
  * * **npm package**: `@angular/forms`
@@ -694,6 +713,17 @@ export declare class FormGroup extends AbstractControl {
  *   new FormControl('Nancy'),
  *   new FormControl('Drew')
  * ], {validators: myValidator, asyncValidators: myAsyncValidator});
+ * ```
+ *
+ * The options object can also be used to set a default value for each child
+ * control's `updateOn` property. If you set `updateOn` to `'blur'` at the
+ * array level, all child controls will default to 'blur', unless the child
+ * has explicitly specified a different `updateOn` value.
+ *
+ * ```ts
+ * const c = new FormArray([
+ *    new FormControl()
+ * ], {updateOn: 'blur'});
  * ```
  *
  * ### Adding or removing controls
