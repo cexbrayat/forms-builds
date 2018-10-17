@@ -70,10 +70,7 @@ var resolvedPromise = Promise.resolve(null);
  *
  * {\@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
  *
- * * **npm package**: `\@angular/forms`
- *
- * * **NgModule**: `FormsModule`
- *
+ * \@ngModule FormsModule
  */
 var NgForm = /** @class */ (function (_super) {
     tslib_1.__extends(NgForm, _super);

@@ -10,18 +10,18 @@
  * found in the LICENSE file at https://angular.io/license
  */
 /**
+ * \@description
  * Base class for control directives.
  *
- * Only used internally in the forms module.
- *
+ * This class is only used internally in the `ReactiveFormsModule` and the `FormsModule`.
  *
  * @abstract
  */
 var /**
+ * \@description
  * Base class for control directives.
  *
- * Only used internally in the forms module.
- *
+ * This class is only used internally in the `ReactiveFormsModule` and the `FormsModule`.
  *
  * @abstract
  */
@@ -29,9 +29,13 @@ AbstractControlDirective = /** @class */ (function () {
     function AbstractControlDirective() {
     }
     Object.defineProperty(AbstractControlDirective.prototype, "value", {
-        /** The value of the control. */
+        /**
+         * @description
+         * Reports the value of the control if it is present, otherwise null.
+         */
         get: /**
-         * The value of the control.
+         * \@description
+         * Reports the value of the control if it is present, otherwise null.
          * @return {?}
          */
         function () { return this.control ? this.control.value : null; },
@@ -40,16 +44,16 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "valid", {
         /**
-         * A control is `valid` when its `status === VALID`.
-         *
-         * In order to have this status, the control must have passed all its
-         * validation checks.
+         * @description
+         * Reports whether the control is valid. A control is considered valid if no
+         * validation errors exist with the current value.
+         * If the control is not present, null is returned.
          */
         get: /**
-         * A control is `valid` when its `status === VALID`.
-         *
-         * In order to have this status, the control must have passed all its
-         * validation checks.
+         * \@description
+         * Reports whether the control is valid. A control is considered valid if no
+         * validation errors exist with the current value.
+         * If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.valid : null; },
@@ -58,16 +62,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
         /**
-         * A control is `invalid` when its `status === INVALID`.
-         *
-         * In order to have this status, the control must have failed
-         * at least one of its validation checks.
+         * @description
+         * Reports whether the control is invalid, meaning that an error exists in the input value.
+         * If the control is not present, null is returned.
          */
         get: /**
-         * A control is `invalid` when its `status === INVALID`.
-         *
-         * In order to have this status, the control must have failed
-         * at least one of its validation checks.
+         * \@description
+         * Reports whether the control is invalid, meaning that an error exists in the input value.
+         * If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.invalid : null; },
@@ -76,16 +78,16 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "pending", {
         /**
-         * A control is `pending` when its `status === PENDING`.
-         *
-         * In order to have this status, the control must be in the
-         * middle of conducting a validation check.
+         * @description
+         * Reports whether a control is pending, meaning that that async validation is occurring and
+         * errors are not yet available for the input value. If the control is not present, null is
+         * returned.
          */
         get: /**
-         * A control is `pending` when its `status === PENDING`.
-         *
-         * In order to have this status, the control must be in the
-         * middle of conducting a validation check.
+         * \@description
+         * Reports whether a control is pending, meaning that that async validation is occurring and
+         * errors are not yet available for the input value. If the control is not present, null is
+         * returned.
          * @return {?}
          */
         function () { return this.control ? this.control.pending : null; },
@@ -94,18 +96,16 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
         /**
-         * A control is `disabled` when its `status === DISABLED`.
-         *
-         * Disabled controls are exempt from validation checks and
-         * are not included in the aggregate value of their ancestor
-         * controls.
+         * @description
+         * Reports whether the control is disabled, meaning that the control is disabled
+         * in the UI and is exempt from validation checks and excluded from aggregate
+         * values of ancestor controls. If the control is not present, null is returned.
          */
         get: /**
-         * A control is `disabled` when its `status === DISABLED`.
-         *
-         * Disabled controls are exempt from validation checks and
-         * are not included in the aggregate value of their ancestor
-         * controls.
+         * \@description
+         * Reports whether the control is disabled, meaning that the control is disabled
+         * in the UI and is exempt from validation checks and excluded from aggregate
+         * values of ancestor controls. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.disabled : null; },
@@ -114,16 +114,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
         /**
-         * A control is `enabled` as long as its `status !== DISABLED`.
-         *
-         * In other words, it has a status of `VALID`, `INVALID`, or
-         * `PENDING`.
+         * @description
+         * Reports whether the control is enabled, meaning that the control is included in ancestor
+         * calculations of validity or value. If the control is not present, null is returned.
          */
         get: /**
-         * A control is `enabled` as long as its `status !== DISABLED`.
-         *
-         * In other words, it has a status of `VALID`, `INVALID`, or
-         * `PENDING`.
+         * \@description
+         * Reports whether the control is enabled, meaning that the control is included in ancestor
+         * calculations of validity or value. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.enabled : null; },
@@ -132,12 +130,12 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "errors", {
         /**
-         * Returns any errors generated by failing validation. If there
-         * are no errors, it will return null.
+         * @description
+         * Reports the control's validation errors. If the control is not present, null is returned.
          */
         get: /**
-         * Returns any errors generated by failing validation. If there
-         * are no errors, it will return null.
+         * \@description
+         * Reports the control's validation errors. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.errors : null; },
@@ -146,18 +144,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
         /**
-         * A control is `pristine` if the user has not yet changed
-         * the value in the UI.
-         *
-         * Note that programmatic changes to a control's value will
-         * *not* mark it dirty.
+         * @description
+         * Reports whether the control is pristine, meaning that the user has not yet changed
+         * the value in the UI. If the control is not present, null is returned.
          */
         get: /**
-         * A control is `pristine` if the user has not yet changed
-         * the value in the UI.
-         *
-         * Note that programmatic changes to a control's value will
-         * *not* mark it dirty.
+         * \@description
+         * Reports whether the control is pristine, meaning that the user has not yet changed
+         * the value in the UI. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.pristine : null; },
@@ -166,18 +160,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
         /**
-         * A control is `dirty` if the user has changed the value
-         * in the UI.
-         *
-         * Note that programmatic changes to a control's value will
-         * *not* mark it dirty.
+         * @description
+         * Reports whether the control is dirty, meaning that the user has changed
+         * the value in the UI. If the control is not present, null is returned.
          */
         get: /**
-         * A control is `dirty` if the user has changed the value
-         * in the UI.
-         *
-         * Note that programmatic changes to a control's value will
-         * *not* mark it dirty.
+         * \@description
+         * Reports whether the control is dirty, meaning that the user has changed
+         * the value in the UI. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.dirty : null; },
@@ -186,12 +176,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "touched", {
         /**
-         * A control is marked `touched` once the user has triggered
-         * a `blur` event on it.
+         * @description
+         * Reports whether the control is touched, meaning that the user has triggered
+         * a `blur` event on it. If the control is not present, null is returned.
          */
         get: /**
-         * A control is marked `touched` once the user has triggered
-         * a `blur` event on it.
+         * \@description
+         * Reports whether the control is touched, meaning that the user has triggered
+         * a `blur` event on it. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.touched : null; },
@@ -199,7 +191,17 @@ AbstractControlDirective = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(AbstractControlDirective.prototype, "status", {
+        /**
+         * @description
+         * Reports the validation status of the control. Possible values include:
+         * 'VALID', 'INVALID', 'DISABLED', and 'PENDING'.
+         * If the control is not present, null is returned.
+         */
         get: /**
+         * \@description
+         * Reports the validation status of the control. Possible values include:
+         * 'VALID', 'INVALID', 'DISABLED', and 'PENDING'.
+         * If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.status : null; },
@@ -208,12 +210,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
         /**
-         * A control is `untouched` if the user has not yet triggered
-         * a `blur` event on it.
+         * @description
+         * Reports whether the control is untouched, meaning that the user has not yet triggered
+         * a `blur` event on it. If the control is not present, null is returned.
          */
         get: /**
-         * A control is `untouched` if the user has not yet triggered
-         * a `blur` event on it.
+         * \@description
+         * Reports whether the control is untouched, meaning that the user has not yet triggered
+         * a `blur` event on it. If the control is not present, null is returned.
          * @return {?}
          */
         function () { return this.control ? this.control.untouched : null; },
@@ -222,12 +226,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
         /**
-         * Emits an event every time the validation status of the control
-         * is re-calculated.
+         * @description
+         * Returns a multicasting observable that emits a validation status whenever it is
+         * calculated for the control. If the control is not present, null is returned.
          */
         get: /**
-         * Emits an event every time the validation status of the control
-         * is re-calculated.
+         * \@description
+         * Returns a multicasting observable that emits a validation status whenever it is
+         * calculated for the control. If the control is not present, null is returned.
          * @return {?}
          */
         function () {
@@ -238,12 +244,16 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
         /**
-         * Emits an event every time the value of the control changes, in
-         * the UI or programmatically.
+         * @description
+         * Returns a multicasting observable of value changes for the control that emits every time the
+         * value of the control changes in the UI or programmatically.
+         * If the control is not present, null is returned.
          */
         get: /**
-         * Emits an event every time the value of the control changes, in
-         * the UI or programmatically.
+         * \@description
+         * Returns a multicasting observable of value changes for the control that emits every time the
+         * value of the control changes in the UI or programmatically.
+         * If the control is not present, null is returned.
          * @return {?}
          */
         function () {
@@ -254,14 +264,14 @@ AbstractControlDirective = /** @class */ (function () {
     });
     Object.defineProperty(AbstractControlDirective.prototype, "path", {
         /**
-         * Returns an array that represents the path from the top-level form
-         * to this control. Each index is the string name of the control on
-         * that level.
+         * @description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
          */
         get: /**
-         * Returns an array that represents the path from the top-level form
-         * to this control. Each index is the string name of the control on
-         * that level.
+         * \@description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
          * @return {?}
          */
         function () { return null; },
@@ -269,33 +279,18 @@ AbstractControlDirective = /** @class */ (function () {
         configurable: true
     });
     /**
-     * Resets the form control. This means by default:
-     *
-     * * it is marked as `pristine`
-     * * it is marked as `untouched`
-     * * value is set to null
-     *
-     * For more information, see `AbstractControl`.
+     * @description
+     * Resets the control with the provided value if the control is present.
      */
     /**
-     * Resets the form control. This means by default:
-     *
-     * * it is marked as `pristine`
-     * * it is marked as `untouched`
-     * * value is set to null
-     *
-     * For more information, see `AbstractControl`.
+     * \@description
+     * Resets the control with the provided value if the control is present.
      * @param {?=} value
      * @return {?}
      */
     AbstractControlDirective.prototype.reset = /**
-     * Resets the form control. This means by default:
-     *
-     * * it is marked as `pristine`
-     * * it is marked as `untouched`
-     * * value is set to null
-     *
-     * For more information, see `AbstractControl`.
+     * \@description
+     * Resets the control with the provided value if the control is present.
      * @param {?=} value
      * @return {?}
      */
@@ -305,25 +300,25 @@ AbstractControlDirective = /** @class */ (function () {
             this.control.reset(value);
     };
     /**
-     * Returns true if the control with the given path has the error specified. Otherwise
-     * returns false.
-     *
+     * @description
+     * Reports whether the control with the given path has the error specified.
      * If no path is given, it checks for the error on the present control.
+     * If the control is not present, false is returned.
      */
     /**
-     * Returns true if the control with the given path has the error specified. Otherwise
-     * returns false.
-     *
+     * \@description
+     * Reports whether the control with the given path has the error specified.
      * If no path is given, it checks for the error on the present control.
+     * If the control is not present, false is returned.
      * @param {?} errorCode
      * @param {?=} path
      * @return {?}
      */
     AbstractControlDirective.prototype.hasError = /**
-     * Returns true if the control with the given path has the error specified. Otherwise
-     * returns false.
-     *
+     * \@description
+     * Reports whether the control with the given path has the error specified.
      * If no path is given, it checks for the error on the present control.
+     * If the control is not present, false is returned.
      * @param {?} errorCode
      * @param {?=} path
      * @return {?}
@@ -332,25 +327,22 @@ AbstractControlDirective = /** @class */ (function () {
         return this.control ? this.control.hasError(errorCode, path) : false;
     };
     /**
-     * Returns error data if the control with the given path has the error specified. Otherwise
-     * returns null or undefined.
-     *
-     * If no path is given, it checks for the error on the present control.
+     * @description
+     * Reports error data for the control with the given path.
+     * If the control is not present, null is returned.
      */
     /**
-     * Returns error data if the control with the given path has the error specified. Otherwise
-     * returns null or undefined.
-     *
-     * If no path is given, it checks for the error on the present control.
+     * \@description
+     * Reports error data for the control with the given path.
+     * If the control is not present, null is returned.
      * @param {?} errorCode
      * @param {?=} path
      * @return {?}
      */
     AbstractControlDirective.prototype.getError = /**
-     * Returns error data if the control with the given path has the error specified. Otherwise
-     * returns null or undefined.
-     *
-     * If no path is given, it checks for the error on the present control.
+     * \@description
+     * Reports error data for the control with the given path.
+     * If the control is not present, null is returned.
      * @param {?} errorCode
      * @param {?=} path
      * @return {?}
@@ -361,21 +353,21 @@ AbstractControlDirective = /** @class */ (function () {
     return AbstractControlDirective;
 }());
 /**
+ * \@description
  * Base class for control directives.
  *
- * Only used internally in the forms module.
- *
+ * This class is only used internally in the `ReactiveFormsModule` and the `FormsModule`.
  *
  * @abstract
  */
 export { AbstractControlDirective };
 if (false) {
     /**
-     * The `FormControl`, `FormGroup`, or `FormArray`
-     * that backs this directive. Most properties fall through to that
-     * instance.
+     * \@description
+     * A reference to the underlying control.
+     *
      * @abstract
-     * @return {?}
+     * @return {?} the control that backs this directive. Most properties fall through to that instance.
      */
     AbstractControlDirective.prototype.control = function () { };
 }

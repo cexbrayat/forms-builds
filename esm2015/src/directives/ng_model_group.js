@@ -39,11 +39,7 @@ export const modelGroupProvider = {
  *
  * {\@example forms/ts/ngModelGroup/ng_model_group_example.ts region='Component'}
  *
- * * **npm package**: `\@angular/forms`
- *
- * * **NgModule**: `FormsModule`
- *
- *
+ * \@ngModule FormsModule
  */
 export class NgModelGroup extends AbstractFormGroupDirective {
     /**

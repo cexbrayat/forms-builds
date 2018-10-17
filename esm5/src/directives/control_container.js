@@ -12,19 +12,15 @@
 import * as tslib_1 from "tslib";
 import { AbstractControlDirective } from './abstract_control_directive';
 /**
- * A directive that contains multiple `NgControl`s.
- *
+ * \@description
+ * A base class for directives that contain multiple registered instances of `NgControl`.
  * Only used by the forms module.
- *
- *
  * @abstract
  */
 var /**
- * A directive that contains multiple `NgControl`s.
- *
+ * \@description
+ * A base class for directives that contain multiple registered instances of `NgControl`.
  * Only used by the forms module.
- *
- *
  * @abstract
  */
 ControlContainer = /** @class */ (function (_super) {
@@ -34,10 +30,12 @@ ControlContainer = /** @class */ (function (_super) {
     }
     Object.defineProperty(ControlContainer.prototype, "formDirective", {
         /**
-         * Get the form to which this container belongs.
+         * @description
+         * The top-level form directive for the control.
          */
         get: /**
-         * Get the form to which this container belongs.
+         * \@description
+         * The top-level form directive for the control.
          * @return {?}
          */
         function () { return null; },
@@ -46,10 +44,12 @@ ControlContainer = /** @class */ (function (_super) {
     });
     Object.defineProperty(ControlContainer.prototype, "path", {
         /**
-         * Get the path to this container.
+         * @description
+         * The path to this group.
          */
         get: /**
-         * Get the path to this container.
+         * \@description
+         * The path to this group.
          * @return {?}
          */
         function () { return null; },
@@ -59,16 +59,18 @@ ControlContainer = /** @class */ (function (_super) {
     return ControlContainer;
 }(AbstractControlDirective));
 /**
- * A directive that contains multiple `NgControl`s.
- *
+ * \@description
+ * A base class for directives that contain multiple registered instances of `NgControl`.
  * Only used by the forms module.
- *
- *
  * @abstract
  */
 export { ControlContainer };
 if (false) {
-    /** @type {?} */
+    /**
+     * \@description
+     * The name for the control
+     * @type {?}
+     */
     ControlContainer.prototype.name;
 }
 //# sourceMappingURL=control_container.js.map

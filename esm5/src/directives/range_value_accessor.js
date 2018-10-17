@@ -21,10 +21,15 @@ export var RANGE_VALUE_ACCESSOR = {
  * The accessor for writing a range value and listening to changes that is used by the
  * `NgModel`, `FormControlDirective`, and `FormControlName` directives.
  *
- *  ### Example
- *  ```
- *  <input type="range" [(ngModel)]="age" >
- *  ```
+ * \@usageNotes
+ * ### Example
+ *
+ * ```
+ * <input type="range" [(ngModel)]="age" >
+ * ```
+ *
+ * \@ngModule FormsModule
+ * \@ngModule ReactiveFormsModule
  */
 var RangeValueAccessor = /** @class */ (function () {
     function RangeValueAccessor(_renderer, _elementRef) {

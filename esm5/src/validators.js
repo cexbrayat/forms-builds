@@ -674,16 +674,16 @@ Validators = /** @class */ (function () {
     /**
      * \@description
      * Validator that performs no operation.
-     * @param {?} c
+     * @param {?} control
      * @return {?}
      */
     Validators.nullValidator = /**
      * \@description
      * Validator that performs no operation.
-     * @param {?} c
+     * @param {?} control
      * @return {?}
      */
-    function (c) { return null; };
+    function (control) { return null; };
     /**
      * @param {?} validators
      * @return {?}

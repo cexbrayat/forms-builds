@@ -921,6 +921,7 @@ AbstractControl = /** @class */ (function () {
      *
      * Calling `setErrors` also updates the validity of the parent control.
      *
+     * @usageNotes
      * ### Manually set the errors for a control
      *
      * ```
@@ -942,6 +943,7 @@ AbstractControl = /** @class */ (function () {
      *
      * Calling `setErrors` also updates the validity of the parent control.
      *
+     * \@usageNotes
      * ### Manually set the errors for a control
      *
      * ```
@@ -966,6 +968,7 @@ AbstractControl = /** @class */ (function () {
      *
      * Calling `setErrors` also updates the validity of the parent control.
      *
+     * \@usageNotes
      * ### Manually set the errors for a control
      *
      * ```
@@ -996,6 +999,7 @@ AbstractControl = /** @class */ (function () {
      * @param path A dot-delimited string or array of string/number values that define the path to the
      * control.
      *
+     * @usageNotes
      * ### Retrieve a nested control
      *
      * For example, to get a `name` control nested within a `person` sub-group:
@@ -1009,9 +1013,7 @@ AbstractControl = /** @class */ (function () {
     /**
      * Retrieves a child control given the control's name or path.
      *
-     * @param {?} path A dot-delimited string or array of string/number values that define the path to the
-     * control.
-     *
+     * \@usageNotes
      * ### Retrieve a nested control
      *
      * For example, to get a `name` control nested within a `person` sub-group:
@@ -1021,14 +1023,15 @@ AbstractControl = /** @class */ (function () {
      * -OR-
      *
      * * `this.form.get(['person', 'name']);`
+     * @param {?} path A dot-delimited string or array of string/number values that define the path to the
+     * control.
+     *
      * @return {?}
      */
     AbstractControl.prototype.get = /**
      * Retrieves a child control given the control's name or path.
      *
-     * @param {?} path A dot-delimited string or array of string/number values that define the path to the
-     * control.
-     *
+     * \@usageNotes
      * ### Retrieve a nested control
      *
      * For example, to get a `name` control nested within a `person` sub-group:
@@ -1038,6 +1041,9 @@ AbstractControl = /** @class */ (function () {
      * -OR-
      *
      * * `this.form.get(['person', 'name']);`
+     * @param {?} path A dot-delimited string or array of string/number values that define the path to the
+     * control.
+     *
      * @return {?}
      */
     function (path) { return _find(this, path, '.'); };
@@ -2436,6 +2442,7 @@ FormGroup = /** @class */ (function (_super) {
      * Sets the value of the `FormGroup`. It accepts an object that matches
      * the structure of the group, with control names as keys.
      *
+     * @usageNotes
      * ### Set the complete value for the form group
      *
      * ```
@@ -2448,8 +2455,8 @@ FormGroup = /** @class */ (function (_super) {
      *
      * form.setValue({first: 'Nancy', last: 'Drew'});
      * console.log(form.value);   // {first: 'Nancy', last: 'Drew'}
-     *
      * ```
+     *
      * @throws When strict checks fail, such as setting the value of a control
      * that doesn't exist or if you excluding the value of a control.
      *
@@ -2470,6 +2477,7 @@ FormGroup = /** @class */ (function (_super) {
      * Sets the value of the `FormGroup`. It accepts an object that matches
      * the structure of the group, with control names as keys.
      *
+     * \@usageNotes
      * ### Set the complete value for the form group
      *
      * ```
@@ -2482,8 +2490,8 @@ FormGroup = /** @class */ (function (_super) {
      *
      * form.setValue({first: 'Nancy', last: 'Drew'});
      * console.log(form.value);   // {first: 'Nancy', last: 'Drew'}
-     *
      * ```
+     *
      * @throws When strict checks fail, such as setting the value of a control
      * that doesn't exist or if you excluding the value of a control.
      *
@@ -2505,6 +2513,7 @@ FormGroup = /** @class */ (function (_super) {
      * Sets the value of the `FormGroup`. It accepts an object that matches
      * the structure of the group, with control names as keys.
      *
+     * \@usageNotes
      * ### Set the complete value for the form group
      *
      * ```
@@ -2517,8 +2526,8 @@ FormGroup = /** @class */ (function (_super) {
      *
      * form.setValue({first: 'Nancy', last: 'Drew'});
      * console.log(form.value);   // {first: 'Nancy', last: 'Drew'}
-     *
      * ```
+     *
      * @throws When strict checks fail, such as setting the value of a control
      * that doesn't exist or if you excluding the value of a control.
      *
@@ -2553,24 +2562,24 @@ FormGroup = /** @class */ (function (_super) {
      *
      * It accepts both super-sets and sub-sets of the group without throwing an error.
      *
+     * @usageNotes
      * ### Patch the value for a form group
      *
-     *  ```
-     *  const form = new FormGroup({
-     *     first: new FormControl(),
-     *     last: new FormControl()
-     *  });
-     *  console.log(form.value);   // {first: null, last: null}
+     * ```
+     * const form = new FormGroup({
+     *    first: new FormControl(),
+     *    last: new FormControl()
+     * });
+     * console.log(form.value);   // {first: null, last: null}
      *
-     *  form.patchValue({first: 'Nancy'});
-     *  console.log(form.value);   // {first: 'Nancy', last: null}
+     * form.patchValue({first: 'Nancy'});
+     * console.log(form.value);   // {first: 'Nancy', last: null}
+     * ```
      *
-     *  ```
-     *
-     * @param value The object that matches the structure of the group
-     * @param options Configure options that determines how the control propagates changes and
-     * emits events after the value is patched
-     * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+     * @param value The object that matches the structure of the group.
+     * @param options Configuration options that determine how the control propagates changes and
+     * emits events after the value is patched.
+     * * `onlySelf`: When true, each change only affects this control and not its parent. Default is
      * true.
      * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
      * `valueChanges`
@@ -2586,24 +2595,24 @@ FormGroup = /** @class */ (function (_super) {
      *
      * It accepts both super-sets and sub-sets of the group without throwing an error.
      *
+     * \@usageNotes
      * ### Patch the value for a form group
      *
-     *  ```
-     *  const form = new FormGroup({
-     *     first: new FormControl(),
-     *     last: new FormControl()
-     *  });
-     *  console.log(form.value);   // {first: null, last: null}
+     * ```
+     * const form = new FormGroup({
+     *    first: new FormControl(),
+     *    last: new FormControl()
+     * });
+     * console.log(form.value);   // {first: null, last: null}
      *
-     *  form.patchValue({first: 'Nancy'});
-     *  console.log(form.value);   // {first: 'Nancy', last: null}
+     * form.patchValue({first: 'Nancy'});
+     * console.log(form.value);   // {first: 'Nancy', last: null}
+     * ```
      *
-     *  ```
-     *
-     * @param {?} value The object that matches the structure of the group
-     * @param {?=} options Configure options that determines how the control propagates changes and
-     * emits events after the value is patched
-     * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+     * @param {?} value The object that matches the structure of the group.
+     * @param {?=} options Configuration options that determine how the control propagates changes and
+     * emits events after the value is patched.
+     * * `onlySelf`: When true, each change only affects this control and not its parent. Default is
      * true.
      * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
      * `valueChanges`
@@ -2620,24 +2629,24 @@ FormGroup = /** @class */ (function (_super) {
      *
      * It accepts both super-sets and sub-sets of the group without throwing an error.
      *
+     * \@usageNotes
      * ### Patch the value for a form group
      *
-     *  ```
-     *  const form = new FormGroup({
-     *     first: new FormControl(),
-     *     last: new FormControl()
-     *  });
-     *  console.log(form.value);   // {first: null, last: null}
+     * ```
+     * const form = new FormGroup({
+     *    first: new FormControl(),
+     *    last: new FormControl()
+     * });
+     * console.log(form.value);   // {first: null, last: null}
      *
-     *  form.patchValue({first: 'Nancy'});
-     *  console.log(form.value);   // {first: 'Nancy', last: null}
+     * form.patchValue({first: 'Nancy'});
+     * console.log(form.value);   // {first: 'Nancy', last: null}
+     * ```
      *
-     *  ```
-     *
-     * @param {?} value The object that matches the structure of the group
-     * @param {?=} options Configure options that determines how the control propagates changes and
-     * emits events after the value is patched
-     * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+     * @param {?} value The object that matches the structure of the group.
+     * @param {?=} options Configuration options that determine how the control propagates changes and
+     * emits events after the value is patched.
+     * * `onlySelf`: When true, each change only affects this control and not its parent. Default is
      * true.
      * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
      * `valueChanges`
@@ -3247,7 +3256,7 @@ FormArray = /** @class */ (function (_super) {
     * Creates a new `FormArray` instance.
     *
     * @param controls An array of child controls. Each child control is given an index
-    * wheh it is registered.
+    * where it is registered.
     *
     * @param validatorOrOpts A synchronous validator function, or an array of
     * such functions, or an `AbstractControlOptions` object that contains validation functions
@@ -3405,6 +3414,7 @@ FormArray = /** @class */ (function (_super) {
      * to set the value of a control that doesn't exist or if you exclude the
      * value of a control.
      *
+     * @usageNotes
      * ### Set the values for the controls in the form array
      *
      * ```
@@ -3439,6 +3449,7 @@ FormArray = /** @class */ (function (_super) {
      * to set the value of a control that doesn't exist or if you exclude the
      * value of a control.
      *
+     * \@usageNotes
      * ### Set the values for the controls in the form array
      *
      * ```
@@ -3474,6 +3485,7 @@ FormArray = /** @class */ (function (_super) {
      * to set the value of a control that doesn't exist or if you exclude the
      * value of a control.
      *
+     * \@usageNotes
      * ### Set the values for the controls in the form array
      *
      * ```
@@ -3518,6 +3530,7 @@ FormArray = /** @class */ (function (_super) {
      *
      * It accepts both super-sets and sub-sets of the array without throwing an error.
      *
+     * @usageNotes
      * ### Patch the values for controls in a form array
      *
      * ```
@@ -3551,6 +3564,7 @@ FormArray = /** @class */ (function (_super) {
      *
      * It accepts both super-sets and sub-sets of the array without throwing an error.
      *
+     * \@usageNotes
      * ### Patch the values for controls in a form array
      *
      * ```
@@ -3585,6 +3599,7 @@ FormArray = /** @class */ (function (_super) {
      *
      * It accepts both super-sets and sub-sets of the array without throwing an error.
      *
+     * \@usageNotes
      * ### Patch the values for controls in a form array
      *
      * ```
@@ -3630,6 +3645,7 @@ FormArray = /** @class */ (function (_super) {
      * that matches the structure of the control. The state is a standalone value
      * or a form state object with both a value and a disabled status.
      *
+     * @usageNotes
      * ### Reset the values in a form array
      *
      * ```ts
@@ -3675,6 +3691,7 @@ FormArray = /** @class */ (function (_super) {
      * that matches the structure of the control. The state is a standalone value
      * or a form state object with both a value and a disabled status.
      *
+     * \@usageNotes
      * ### Reset the values in a form array
      *
      * ```ts
@@ -3721,6 +3738,7 @@ FormArray = /** @class */ (function (_super) {
      * that matches the structure of the control. The state is a standalone value
      * or a form state object with both a value and a disabled status.
      *
+     * \@usageNotes
      * ### Reset the values in a form array
      *
      * ```ts

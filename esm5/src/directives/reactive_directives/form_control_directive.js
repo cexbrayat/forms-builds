@@ -36,6 +36,7 @@ export var formControlBinding = {
  * any values written to the DOM element through user input will be reflected in the
  * `FormControl` instance (view -> model).
  *
+ * \@usageNotes
  * Use this directive if you'd like to create and manage a `FormControl` instance directly.
  * Simply create a `FormControl`, save it to your component class, and pass it into the
  * `FormControlDirective`.
@@ -62,16 +63,13 @@ export var formControlBinding = {
  *
  * {\@example forms/ts/simpleFormControl/simple_form_control_example.ts region='Component'}
  *
- * * **npm package**: `\@angular/forms`
- *
- * * **NgModule**: `ReactiveFormsModule`
- *
  * ### Use with ngModel
  *
  * Support for using the `ngModel` input property and `ngModelChange` event with reactive
  * form directives has been deprecated in Angular v6 and will be removed in Angular v7.
  *
  * Now deprecated:
+ *
  * ```html
  * <input [formControl]="control" [(ngModel)]="value">
  * ```
@@ -132,7 +130,7 @@ export var formControlBinding = {
  * pattern with a config value of `"always"`. This may help to track down where in the code
  * the pattern is being used as the code is being updated.
  *
- *
+ * \@ngModule ReactiveFormsModule
  */
 var FormControlDirective = /** @class */ (function (_super) {
     tslib_1.__extends(FormControlDirective, _super);

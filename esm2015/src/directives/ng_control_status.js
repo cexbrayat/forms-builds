@@ -73,7 +73,8 @@ export const ngControlStatusHost = {
  * * ng-untouched
  * * ng-touched
  *
- *
+ * \@ngModule FormsModule
+ * \@ngModule ReactiveFormsModule
  */
 export class NgControlStatus extends AbstractControlStatus {
     /**
@@ -92,7 +93,8 @@ NgControlStatus.ctorParameters = () => [
  * Directive automatically applied to Angular form groups that sets CSS classes
  * based on control status (valid/invalid/dirty/etc).
  *
- *
+ * \@ngModule FormsModule
+ * \@ngModule ReactiveFormsModule
  */
 export class NgControlStatusGroup extends AbstractControlStatus {
     /**

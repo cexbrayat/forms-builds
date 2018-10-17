@@ -14,8 +14,9 @@ import { InternalFormsSharedModule, NG_FORM_SELECTOR_WARNING, NG_MODEL_WITH_FORM
 import { RadioControlRegistry } from './directives/radio_control_value_accessor';
 import { FormBuilder } from './form_builder';
 /**
- * \@description
- * An `NgModule` that registers the directives and providers for template-driven forms.
+ * Exports the required providers and directives for template-driven forms,
+ * making them available for import by NgModules that import this module.
+ * @see [Forms](guide/forms)
  *
  * @see [Forms Guide](/guide/forms)
  */
@@ -65,8 +66,9 @@ var FormsModule = /** @class */ (function () {
 }());
 export { FormsModule };
 /**
- * \@description
- * An `NgModule` that registers the directives and providers for reactive forms.
+ * Exports the required infrastructure and directives for reactive forms,
+ * making them available for import by NgModules that import this module.
+ * @see [Forms](guide/reactive-forms)
  *
  * @see [Reactive Forms Guide](/guide/reactive-forms)
  *

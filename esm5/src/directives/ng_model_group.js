@@ -40,11 +40,7 @@ export var modelGroupProvider = {
  *
  * {\@example forms/ts/ngModelGroup/ng_model_group_example.ts region='Component'}
  *
- * * **npm package**: `\@angular/forms`
- *
- * * **NgModule**: `FormsModule`
- *
- *
+ * \@ngModule FormsModule
  */
 var NgModelGroup = /** @class */ (function (_super) {
     tslib_1.__extends(NgModelGroup, _super);

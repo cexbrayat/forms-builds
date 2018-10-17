@@ -13,13 +13,13 @@ import * as tslib_1 from "tslib";
 import { ControlContainer } from './control_container';
 import { composeAsyncValidators, composeValidators, controlPath } from './shared';
 /**
- * This is a base class for code shared between `NgModelGroup` and `FormGroupName`.
- *
+ * \@description
+ * A base class for code shared between the `NgModelGroup` and `FormGroupName` directives.
  *
  */
 var /**
- * This is a base class for code shared between `NgModelGroup` and `FormGroupName`.
- *
+ * \@description
+ * A base class for code shared between the `NgModelGroup` and `FormGroupName` directives.
  *
  */
 AbstractFormGroupDirective = /** @class */ (function (_super) {
@@ -28,9 +28,20 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * @description
+     * An internal callback method triggered on the instance after the inputs are set.
+     * Registers the group with its parent group.
+     */
+    /**
+     * \@description
+     * An internal callback method triggered on the instance after the inputs are set.
+     * Registers the group with its parent group.
      * @return {?}
      */
     AbstractFormGroupDirective.prototype.ngOnInit = /**
+     * \@description
+     * An internal callback method triggered on the instance after the inputs are set.
+     * Registers the group with its parent group.
      * @return {?}
      */
     function () {
@@ -38,9 +49,20 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
         ((this.formDirective)).addFormGroup(this);
     };
     /**
+     * @description
+     * An internal callback method triggered before the instance is destroyed.
+     * Removes the group from its parent group.
+     */
+    /**
+     * \@description
+     * An internal callback method triggered before the instance is destroyed.
+     * Removes the group from its parent group.
      * @return {?}
      */
     AbstractFormGroupDirective.prototype.ngOnDestroy = /**
+     * \@description
+     * An internal callback method triggered before the instance is destroyed.
+     * Removes the group from its parent group.
      * @return {?}
      */
     function () {
@@ -50,10 +72,12 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
     };
     Object.defineProperty(AbstractFormGroupDirective.prototype, "control", {
         /**
-         * Get the `FormGroup` backing this binding.
+         * @description
+         * The `FormGroup` bound to this directive.
          */
         get: /**
-         * Get the `FormGroup` backing this binding.
+         * \@description
+         * The `FormGroup` bound to this directive.
          * @return {?}
          */
         function () { return /** @type {?} */ ((this.formDirective)).getFormGroup(this); },
@@ -62,10 +86,12 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
     });
     Object.defineProperty(AbstractFormGroupDirective.prototype, "path", {
         /**
-         * Get the path to this control group.
+         * @description
+         * The path to this group from the top-level directive.
          */
         get: /**
-         * Get the path to this control group.
+         * \@description
+         * The path to this group from the top-level directive.
          * @return {?}
          */
         function () { return controlPath(this.name, this._parent); },
@@ -74,10 +100,12 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
     });
     Object.defineProperty(AbstractFormGroupDirective.prototype, "formDirective", {
         /**
-         * Get the `Form` to which this group belongs.
+         * @description
+         * The top-level directive for this group if present, otherwise null.
          */
         get: /**
-         * Get the `Form` to which this group belongs.
+         * \@description
+         * The top-level directive for this group if present, otherwise null.
          * @return {?}
          */
         function () { return this._parent ? this._parent.formDirective : null; },
@@ -85,7 +113,13 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
         configurable: true
     });
     Object.defineProperty(AbstractFormGroupDirective.prototype, "validator", {
+        /**
+         * @description
+         * The synchronous validators registered with this group.
+         */
         get: /**
+         * \@description
+         * The synchronous validators registered with this group.
          * @return {?}
          */
         function () { return composeValidators(this._validators); },
@@ -93,7 +127,13 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
         configurable: true
     });
     Object.defineProperty(AbstractFormGroupDirective.prototype, "asyncValidator", {
+        /**
+         * @description
+         * The async validators registered with this group.
+         */
         get: /**
+         * \@description
+         * The async validators registered with this group.
          * @return {?}
          */
         function () {
@@ -115,23 +155,32 @@ AbstractFormGroupDirective = /** @class */ (function (_super) {
     return AbstractFormGroupDirective;
 }(ControlContainer));
 /**
- * This is a base class for code shared between `NgModelGroup` and `FormGroupName`.
- *
+ * \@description
+ * A base class for code shared between the `NgModelGroup` and `FormGroupName` directives.
  *
  */
 export { AbstractFormGroupDirective };
 if (false) {
     /**
+     * \@description
+     * The parent control for the group
+     *
      * \@internal
      * @type {?}
      */
     AbstractFormGroupDirective.prototype._parent;
     /**
+     * \@description
+     * An array of synchronous validators for the group
+     *
      * \@internal
      * @type {?}
      */
     AbstractFormGroupDirective.prototype._validators;
     /**
+     * \@description
+     * An array of async validators for the group
+     *
      * \@internal
      * @type {?}
      */

@@ -327,10 +327,10 @@ export class Validators {
     /**
      * \@description
      * Validator that performs no operation.
-     * @param {?} c
+     * @param {?} control
      * @return {?}
      */
-    static nullValidator(c) { return null; }
+    static nullValidator(control) { return null; }
     /**
      * @param {?} validators
      * @return {?}

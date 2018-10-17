@@ -24,6 +24,8 @@ import { Directive } from '@angular/core';
  * ```
  *
  * \@experimental
+ * \@ngModule ReactiveFormsModule
+ * \@ngModule FormsModule
  */
 export class NgNoValidate {
 }

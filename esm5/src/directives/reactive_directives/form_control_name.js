@@ -37,6 +37,7 @@ export var controlNameBinding = {
  * any values written to the DOM element through user input will be reflected in the
  * `FormControl` instance (view -> model).
  *
+ * \@usageNotes
  * This directive is designed to be used with a parent `FormGroupDirective` (selector:
  * `[formGroup]`).
  *
@@ -71,16 +72,13 @@ export var controlNameBinding = {
  * * Radio buttons: `RadioControlValueAccessor`
  * * Selects: `SelectControlValueAccessor`
  *
- * **npm package**: `\@angular/forms`
- *
- * **NgModule**: `ReactiveFormsModule`
- *
  * ### Use with ngModel
  *
  * Support for using the `ngModel` input property and `ngModelChange` event with reactive
  * form directives has been deprecated in Angular v6 and will be removed in Angular v7.
  *
  * Now deprecated:
+ *
  * ```html
  * <form [formGroup]="form">
  *   <input formControlName="first" [(ngModel)]="value">
@@ -145,7 +143,7 @@ export var controlNameBinding = {
  * pattern with a config value of `"always"`. This may help to track down where in the code
  * the pattern is being used as the code is being updated.
  *
- *
+ * \@ngModule ReactiveFormsModule
  */
 var FormControlName = /** @class */ (function (_super) {
     tslib_1.__extends(FormControlName, _super);

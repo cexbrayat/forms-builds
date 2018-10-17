@@ -103,7 +103,8 @@ export var ngControlStatusHost = {
  * * ng-untouched
  * * ng-touched
  *
- *
+ * \@ngModule FormsModule
+ * \@ngModule ReactiveFormsModule
  */
 var NgControlStatus = /** @class */ (function (_super) {
     tslib_1.__extends(NgControlStatus, _super);
@@ -124,7 +125,8 @@ export { NgControlStatus };
  * Directive automatically applied to Angular form groups that sets CSS classes
  * based on control status (valid/invalid/dirty/etc).
  *
- *
+ * \@ngModule FormsModule
+ * \@ngModule ReactiveFormsModule
  */
 var NgControlStatusGroup = /** @class */ (function (_super) {
     tslib_1.__extends(NgControlStatusGroup, _super);

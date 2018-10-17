@@ -11,27 +11,31 @@
  */
 import { AbstractControlDirective } from './abstract_control_directive';
 /**
- * A directive that contains multiple `NgControl`s.
- *
+ * \@description
+ * A base class for directives that contain multiple registered instances of `NgControl`.
  * Only used by the forms module.
- *
- *
  * @abstract
  */
 export class ControlContainer extends AbstractControlDirective {
     /**
-     * Get the form to which this container belongs.
+     * \@description
+     * The top-level form directive for the control.
      * @return {?}
      */
     get formDirective() { return null; }
     /**
-     * Get the path to this container.
+     * \@description
+     * The path to this group.
      * @return {?}
      */
     get path() { return null; }
 }
 if (false) {
-    /** @type {?} */
+    /**
+     * \@description
+     * The name for the control
+     * @type {?}
+     */
     ControlContainer.prototype.name;
 }
 //# sourceMappingURL=control_container.js.map

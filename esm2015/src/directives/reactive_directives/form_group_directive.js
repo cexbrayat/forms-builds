@@ -30,6 +30,7 @@ export const formDirectiveProvider = {
  * and `FormArray` instances to child `FormControlName`, `FormGroupName`,
  * and `FormArrayName` directives.
  *
+ * \@usageNotes
  * **Set value**: You can set the form's initial value when instantiating the
  * `FormGroup`, or you can set it programmatically later using the `FormGroup`'s
  * {\@link AbstractControl#setValue setValue} or {\@link AbstractControl#patchValue patchValue}
@@ -50,11 +51,7 @@ export const formDirectiveProvider = {
  *
  * {\@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
  *
- * **npm package**: `\@angular/forms`
- *
- * **NgModule**: `ReactiveFormsModule`
- *
- *
+ * \@ngModule ReactiveFormsModule
  */
 export class FormGroupDirective extends ControlContainer {
     /**
